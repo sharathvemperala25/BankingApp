@@ -41,7 +41,7 @@ public class AccountControllerTest {
 
     
     @Test
-    public void testGetProductListSuccess() throws URISyntaxException
+    public void testcreateAccountSuccess() throws URISyntaxException
     {
     	Account tempAccount = new Account();
     	tempAccount.setCostumerId(1L);
@@ -49,6 +49,19 @@ public class AccountControllerTest {
     	tempAccount.setAccountType("savings");
     	tempAccount.setCustomerName("sharath");
     	tempAccount.setStatus("pending");
+    	Mockito.when(accountRepositry.save(tempAccount)).thenReturn(tempAccount);
+    	Account account = accountService.saveAccount(tempAccount);
+    	Optional<Account> optionalAccount = Optional.ofNullable(account);
+		assertThat(optionalAccount.isPresent());
+
+    }
+    
+    @Test
+    public void testacceptStatusSuccess() throws URISyntaxException
+    {
+    	Account tempAccount = new Account();
+    	tempAccount.setCostumerId(1L);
+    	 tempAccount.setStatus("accept");
     	Mockito.when(accountRepositry.save(tempAccount)).thenReturn(tempAccount);
     	Account account = accountService.saveAccount(tempAccount);
     	Optional<Account> optionalAccount = Optional.ofNullable(account);

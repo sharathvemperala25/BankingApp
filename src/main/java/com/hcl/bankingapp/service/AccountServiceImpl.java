@@ -17,4 +17,14 @@ public class AccountServiceImpl implements AccountService {
 		// TODO Auto-generated method stub
 		return accountRepository.save(account);
 	}
+	
+	@Override
+	public Account status(Long id, String status) {
+		
+	Account account= accountRepository.findById(id).get();
+	account.setStatus(status);
+	accountRepository.save(account);
+	 
+		return account;
+	}
 }

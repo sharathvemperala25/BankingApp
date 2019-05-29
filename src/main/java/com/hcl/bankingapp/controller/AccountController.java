@@ -20,5 +20,12 @@ public class AccountController {
 	public Account createAccount(@RequestBody Account account) {
 		return accountService.saveAccount(account);
 	}
+	
+	@PostMapping("/status")
+	public Account status(@RequestBody Account account)
+	{	
+		
+		return accountService.status(account.getCostumerId(), account.getStatus());
+	}
 
 }
