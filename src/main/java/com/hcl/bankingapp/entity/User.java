@@ -12,6 +12,8 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long userId;
 	private String password;
+	private Long accountNumber;
+	
 	public Long getUserId() {
 		return userId;
 	}
@@ -23,6 +25,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Long getAccountNumber() {
+		return accountNumber;
+	}
+	public void setAccountNumber(Long accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 	
 	
