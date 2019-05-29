@@ -1,5 +1,6 @@
 package com.hcl.bankingapp.entity;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,10 +23,18 @@ public class Account {
 	private Long costumerId;
 	
 	private Double accountBalance;
+	 @NotEmpty(message = "name must not be empty")
 	private String customerName;
 	private String mobileNumber;
+	 @NotEmpty(message = "email must not be empty")
+	 @Email(message = "email should be a valid email")
+	private String email;
+	 @NotEmpty(message = "accountType must not be empty")
 	private String accountType;
 	private String status;
+	private String maritialStatus;
+	
+
 	
 	
 	
@@ -72,6 +83,13 @@ public class Account {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 
 	
 	
