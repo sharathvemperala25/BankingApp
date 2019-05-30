@@ -4,7 +4,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.elite.banking.controller.UserCredentialsController;
+import com.hcl.bankingapp.controller.UserCredentialsController;
+
 
 public class UserCredentialsControllerTest {
 	@Autowired

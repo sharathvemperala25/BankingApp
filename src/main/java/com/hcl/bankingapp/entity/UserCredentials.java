@@ -1,4 +1,4 @@
-package com.elite.banking.entity;
+package com.hcl.bankingapp.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
